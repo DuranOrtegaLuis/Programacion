@@ -1,0 +1,152 @@
+package pila;
+
+import java.util.Scanner;
+import java.util.Random;
+
+public class Pila {
+    
+    public static void main(String[] args) {
+        Random random=new Random();
+    Scanner entrada=new Scanner(System.in); 
+  int pila=26,opt; 
+  String abc[]=new String[pila]; 
+  String conver[]=new String[pila]; 
+    char comparador[]=new char[pila]; 
+    char abe=65; 
+     int ArrayInt[]=new int[pila];
+     int Ordenador[]=new int[pila];
+      char caracteres[]=new char[pila]; 
+     do{  
+    System.out.println("Pila 2 ,¿Qué desea hacer?\n" );
+    System.out.println("1.-AutoLlenado\n");
+    System.out.println("2.-Llenado selectivo\n" );
+    System.out.println("3.-Mostra\n");
+    System.out.println("4.-Eliminar\n");
+    System.out.println("5.-Salir\n");
+    System.out.println("6.-AutoLlenado Al Azar\n");
+    System.out.println("7.-Ordenado"); 
+    opt=entrada.nextInt();
+    switch(opt){
+        case 1:  
+        for(int i=0; i<comparador.length; i++){        
+        if(abc[i]==null){
+        comparador[i]=abe;      conver[i]=Character.toString(comparador[i]);
+        abc[i]=conver[i];
+        abe++;
+           }         else{
+     i++;
+           }
+        }
+    
+        break;
+        case 2: 
+            for(int i=0; i<comparador.length; i++){ 
+            System.out.println("Llenar el espacio:"+i);
+        abc[i]=entrada.next(); 
+         System.out.println("Desea llenar otro?\n"+"1.-Si\n"+"2.-No"); 
+        int optc=entrada.nextInt();
+        if(optc==2){
+        i=comparador.length; 
+        }
+        }
+            break;
+            
+        case 3:
+            for(int i=comparador.length-1; i>=0; i--){ 
+            if(abc[i]!=null){
+            System.out.print(" "+abc[i]+"");
+                if(i==0){
+           System.out.println("");
+        }
+     }
+                
+            }
+            
+            break;
+            
+        case 4:
+          int dowhile;
+          do{
+        System.out.println("Que desea elimiinar\n"+"1.-Todo\n"+"2.-Espacio\n");
+         dowhile=entrada.nextInt();
+          }while(dowhile!=1&&dowhile!=2);
+            switch(dowhile){
+     case 1:
+                    for(int i=0; i<comparador.length; i++){
+       abc[i]=null;
+                    }
+          System.out.println("Listo ;)");
+             break;
+          case 2:
+                    for(int i=0; i<comparador.length; i++){
+            System.out.println("Desea borrar: "+i+" Esta "+abc[i]);
+              System.out.println("1.-Si\n"+"2.-No");
+          int gato=entrada.nextInt();
+          if(gato==1){
+       abc[i]=null;
+         }
+        else{
+     }
+      }
+         System.out.println("Listo");
+     break;    
+                    
+     default:
+    System.out.println("Ok");
+      }
+  case 6:
+            
+    for(int i=0; i<comparador.length; i++){
+            
+   if(abc[i]==null){
+               
+ ArrayInt[i]=random.nextInt(90-65+1)+65; 
+              
+ comparador[i]=(char)ArrayInt[i];
+  conver[i]=Character.toString(comparador[i]);
+ abc[i]=conver[i];
+           }
+           else{
+           i++;
+           }
+        }
+            
+            
+            break;
+    
+        case 7:
+            
+            for(int i=0; i<Ordenador.length; i++){
+            caracteres[i]=abc[i].charAt(0);
+            Ordenador[i]=caracteres[i];
+            } 
+            for(int i=0;i<Ordenador.length;i++){
+  for(int j=i+1;j<Ordenador.length;j++){
+   if(Ordenador[i]>Ordenador[j])
+   {
+   int aux=Ordenador[j];
+    Ordenador[j]=Ordenador[i];
+    Ordenador[i]=aux;
+   }      
+  }
+}
+           for(int z=0; z<Ordenador.length; z++){
+               comparador[z]=(char)Ordenador[z];
+               conver[z]=Character.toString(comparador[z]);
+               abc[z]=conver[z];
+           }
+   
+           
+           
+           
+           
+ 
+            
+            break;
+            
+    }           
+    }while(opt!=5); //
+        
+    }
+    
+}
