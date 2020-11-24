@@ -1,0 +1,71 @@
+package nodos01;
+import java.util.Scanner;
+
+public class Nodos01 {
+static class Nodo{
+         String dato;
+        Nodo sig;
+    }
+    
+
+
+public static void main(String[] args) {
+   Scanner Entrada=new Scanner(System.in);
+    String arreglo[]=new String[3];
+    for(int i=0; i<arreglo.length; i++ ){
+   System.out.println("Inserte sus datos");     
+    arreglo[i]=Entrada.next();
+            }
+        Nodo fin = null;
+        
+        fin = new Nodo();
+        fin.dato= arreglo[0];
+        fin.sig= null;
+        // A -- unico nodo que se ha agregado a la lista
+       mostrar("caso 1",fin); 
+       
+       Nodo temp;
+       
+       temp = new Nodo();
+       temp.dato = arreglo[1];
+       temp.sig = fin;
+       fin = temp;
+       //B A -- agrego el valor "B" antes del nodo "A"
+       mostrar("case 2", fin);
+       
+       Nodo nalg;
+       nalg =new Nodo();
+       nalg.dato=arreglo[2];
+       nalg.sig = fin;
+       fin=nalg;
+       
+       
+       mostrar("case 3",fin);
+       
+       
+    /*  temp = new Nodo();
+       temp.dato = arreglo[2];
+       temp.sig = null;
+       
+       Nodo temp2;
+       temp2 = fin;
+       
+       while(temp2.sig != null)
+           temp2 = temp2.sig;
+       temp2.sig = temp;
+       // B A C -- 
+       mostrar("case 3", fin);
+    
+       */
+    }
+    
+    
+    static void mostrar(String dato, Nodo actual){
+        System.out.println(dato+" ");
+        
+        while(actual != null){
+            System.out.println(actual.dato + " ");
+            actual = actual.sig;
+        }
+    }
+}
